@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script charset="utf8">
+  var app = { nrComponentes:0 };
+  app.getComponente = function(nome) {
+    if (!app[nome]) {
+      app[nome] = {};
+      app[app.nrComponentes++] = nome;
+    }
+    return app[nome];
+  };
+</script>
+
+  <h1>JOGO DA MEMÓRIA</h1>
+  <div class="container_botoes">
+    <a href="#" class="button_inicio" id="iniciar_jogo"><span>Iniciar Game</span></a>
+    <a href="#" class="button_finalizar" id="finalizar_jogo"><span>Finalizar</span></a>
+
+    <div class="painel_tempo">
+        <p>Tempo: </p>
+        <div id="timer">0</div>
+    </div>
+    <div class="painel_tentativas">
+        <p>Erros: </p>
+        <div id="tentativas">0</div>
+    </div>    
+  </div>  
+ 
+  <div id="tabuleiro">   
+  </div>
+
+  <script src="script.js" charset="utf8"></script>
+</body>
+</html>
